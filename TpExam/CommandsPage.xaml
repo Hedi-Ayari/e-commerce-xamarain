@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.CommandsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Your layout for displaying commands goes here -->
+            <!-- For example, you might use a ListView to display a list of commands -->
+            <ListView x:Name="CommandsListView" ItemSelected="CommandsListView_ItemSelected">
+                <!-- Define your ListView.ItemTemplate to display each command -->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding NomClient}" />
+                        <!-- Add more bindings for other properties of the Command object -->
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

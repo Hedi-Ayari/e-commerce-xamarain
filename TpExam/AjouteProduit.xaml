@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.AjouteProduit">
+    <ContentPage.Content>
+        <StackLayout>
+            <TableView>
+                <TableRoot>
+                    <TableSection>
+                        <EntryCell x:Name="Name" Label="Product Name"/>
+                        <EntryCell x:Name="Description" Label="Description"/>
+                        <EntryCell x:Name="Price" Label="Price" Keyboard="Numeric"/>
+                        <EntryCell x:Name="ImageUrl" Label="Image URL"/>
+
+                        <!-- Replace the EntryCell for category name with a Picker -->
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Category" VerticalOptions="CenterAndExpand" />
+                                <Picker x:Name="CategoryPicker" Title="Select Category" />
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <Button x:Name="BtnAdd" Text="Ajouter" Clicked="BtnAdd_Clicked"/>
+            <Button x:Name="ShowProductsButton" Text="Show Products" Clicked="ShowProductsButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

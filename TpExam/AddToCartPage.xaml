@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.AddToCartPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Add labels for product details -->
+            <Label Text="Product Details" FontAttributes="Bold" />
+            <Label x:Name="ProductNameLabel" FontAttributes="Bold" />
+            <Label x:Name="DescriptionLabel" />
+            <Label x:Name="PriceLabel" />
+
+            <!-- Entry for quantity -->
+            <Label Text="Enter Quantity" FontAttributes="Bold" />
+            <Entry x:Name="QuantityEntry" Placeholder="Quantity" Keyboard="Numeric" />
+
+            <!-- Button to add to cart -->
+            <Button Text="Add to Cart" Clicked="AddToCartButton_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

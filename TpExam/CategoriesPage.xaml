@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.CategoriesPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Add Category" Clicked="AddCategoryButton_Clicked" />
+            <ListView x:Name="CategoriesListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Nom}" VerticalOptions="CenterAndExpand" />
+                                <Button Text="Update" Clicked="UpdateButton_Clicked" CommandParameter="{Binding .}" />
+                                <Button Text="Delete" Clicked="DeleteButton_Clicked" CommandParameter="{Binding .}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

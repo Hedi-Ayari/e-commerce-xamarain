@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.UserCategory" NavigationPage.HasNavigationBar="False" BackgroundColor="White">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- First Column -->
+                <StackLayout Grid.Column="0" >
+                    <Image Margin="0,40,10,0" Source="settings.png" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OpenSideBar" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                </StackLayout>
+
+                <StackLayout Grid.Column="1" >
+                   
+                    <Label TextColor="#27214D" Text="Welcome To My fruty" FontSize="20" HorizontalTextAlignment="Center" Margin="0,30,-90,0" />
+                </StackLayout>
+
+                <StackLayout Grid.Column="3" >
+                    <Image Source="basket.png" Margin="0,20,20,-10" HeightRequest="100" WidthRequest="100">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnBasketClicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label TextColor="#27214D" Text="My Basket" Margin="10,-50,0,0" />
+                </StackLayout>
+            </Grid>
+
+
+            <!-- Hello  Section -->
+            <StackLayout Padding="20">
+
+                <Label TextColor="#27214D" FontSize="18" Text="Categories : " FontAttributes="Bold" />
+            </StackLayout>
+            <CollectionView x:Name="CategoriesCollectionView" ItemsSource="{Binding Categories}" SelectionMode="Single">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                                 Span="2" />
+            </CollectionView.ItemsLayout>
+
+              
+
+
+                <CollectionView.ItemTemplate>
+                
+                <DataTemplate>
+                    <Grid Padding="5">
+                        <Frame HeightRequest="120" Margin="20,30,10,10" BackgroundColor="#ff9900" BorderColor="#ff9900" CornerRadius="10" HasShadow="True">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnFrameTapped" />
+                            </Frame.GestureRecognizers>
+                            <StackLayout>
+                                    <Image Source="{Binding Nom, StringFormat='{0}.png'}" Margin="0,30,10,0" HeightRequest="40"></Image>
+                                <Label Margin="0,10,10,10" Text="{Binding Nom}" FontSize="18" TextColor="White" HorizontalTextAlignment="Center" />
+                            </StackLayout>
+                        </Frame>
+
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

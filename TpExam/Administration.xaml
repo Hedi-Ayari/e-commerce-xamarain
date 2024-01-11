@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.Administration"
+             BackgroundColor="White" NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <!-- 75% of the page -->
+                <RowDefinition Height="*" />
+                <!-- Remaining 25% of the page -->
+            </Grid.RowDefinitions>
+
+            <!-- Orange Background Section -->
+            <StackLayout Grid.Row="0" BackgroundColor="#FDB16D">
+                <!-- Place your image here -->
+                <Image Margin="0,60,0,0" WidthRequest="250" Source="./assets/login.png"/>
+            </StackLayout>
+
+            <!-- White Content Section -->
+            <StackLayout Grid.Row="1" BackgroundColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Label Text="Welcome to Our App!" Padding="0, 0, 0, 20"  FontSize="20" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" />
+                <Frame  BorderColor="Black" CornerRadius="5" Padding="1">
+                    <Entry x:Name="UsernameEntry" Placeholder="Username" TextColor="Black" PlaceholderColor="Black" FontSize="16" WidthRequest="200" />
+                </Frame>
+                <Frame BorderColor="Black" CornerRadius="5" Padding="1">
+                    <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" TextColor="Black" PlaceholderColor="Black" FontSize="16" WidthRequest="200" />
+                </Frame>
+
+                <Button CornerRadius="5" Text="Login" BackgroundColor="#FFA451" Clicked="OnLoginButtonClicked" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

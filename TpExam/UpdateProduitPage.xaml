@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.UpdateProduitPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="UpdatedProductName" Placeholder="Enter updated product name" />
+            <Entry x:Name="UpdatedProductDescription" Placeholder="Enter updated product description" />
+            <Entry x:Name="UpdatedProductPrice" Placeholder="Enter updated product price" />
+            <Entry x:Name="UpdatedProductImageUrl" Placeholder="Enter updated product image URL" />
+            <Button Text="Update" Clicked="UpdateButton_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

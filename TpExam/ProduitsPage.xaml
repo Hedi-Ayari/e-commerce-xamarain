@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.ProduitsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Add a Button to navigate to AjouteProduit.xaml -->
+            <Button Text="Add Product" Clicked="AddProductButton_Clicked" />
+
+            <!-- Add a ListView to display products -->
+            <ListView x:Name="ProductsListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <!-- Display the product image -->
+                                <Image Source="{Binding UrlImage}" WidthRequest="50" HeightRequest="50" />
+
+                                <!-- Display the product details -->
+                                <StackLayout>
+                                    <Label Text="{Binding Nom}" FontAttributes="Bold" />
+                                    <Label Text="{Binding Description}" />
+                                    
+
+
+                                    <!-- Add other product details as needed -->
+                                </StackLayout>
+                                <Label Text="{Binding Prix, StringFormat='Price: {0:C}'}" />
+                                <!-- Add Update and Delete buttons -->
+                                <Button Text="Update" Clicked="UpdateButton_Clicked" CommandParameter="{Binding .}" />
+                                <Button Text="Delete" Clicked="DeleteButton_Clicked" CommandParameter="{Binding .}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Add other content as needed -->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

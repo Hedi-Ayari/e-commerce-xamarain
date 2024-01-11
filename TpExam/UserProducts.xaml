@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.UserProducts"
+             NavigationPage.HasNavigationBar="False">
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="#f3f4f9" />
+                <Setter Property="Padding" Value="10" />
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="Brandon Grotesque" />
+                <Setter Property="TextColor" Value="#27214D" />
+            </Style>
+
+            <Style TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFill" />
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="#f3f4f9" />
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="#27214D" />
+
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="Margin" Value="0,0,0,10" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <!-- Your existing XAML content here -->
+
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Header Image -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- First Column -->
+                <StackLayout Grid.Column="0" >
+                    <Image Margin="0,40,10,0" Source="settings.png" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OpenSideBar" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                </StackLayout>
+
+                <StackLayout Grid.Column="1" >
+
+                    <Label TextColor="#27214D" Text="Welcome To My fruty" FontSize="20" HorizontalTextAlignment="Center" Margin="0,30,-90,0" />
+                </StackLayout>
+
+                <StackLayout Grid.Column="3" >
+                    <Image Source="basket.png" Margin="0,20,20,-10" HeightRequest="100" WidthRequest="100">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnBasketClicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label TextColor="#27214D" Text="My Basket" Margin="10,-50,0,0" />
+                </StackLayout>
+            </Grid>
+
+            <!-- Hello  Section -->
+            <StackLayout Padding="10">
+                <Label Text="Hello ," />
+                <Label Text="What fruit do you want today?" FontAttributes="Bold" />
+            </StackLayout>
+
+            
+
+
+            <!-- Recommended Combo Section -->
+            <StackLayout Padding="10">
+                <Label Text="Our Products" FontSize="Large" FontAttributes="Bold" />
+                <ListView x:Name="ProductsListView" RowHeight="200">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Height="200">
+                                <StackLayout>
+                                    <Frame BackgroundColor="#E6E6E6" 
+                               VerticalOptions="FillAndExpand" 
+                               HorizontalOptions="FillAndExpand"
+                               Margin="20">
+
+                                        <Grid>
+                                            <Image HeightRequest="10" WidthRequest="10" Source="{Binding UrlImage}"  />
+
+                                            <StackLayout BackgroundColor="#E6E6E6"  Grid.Column="1" Margin="10,0,0,0" VerticalOptions="Center">
+                                                <Label Text="{Binding Nom}" FontAttributes="Bold" />
+                                                <Label Text="{Binding Description}" />
+                                                <Label Text="{Binding Prix, StringFormat='Price: {0:C}'}" HorizontalOptions="End" />
+                                                <Image Source="addtocart.png" HeightRequest="20" WidthRequest="20" Margin="0,20,0,10" VerticalOptions="End" HorizontalOptions="End">
+                                                    <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="AddToCartButton_Clicked" />
+                                                    </Image.GestureRecognizers>
+                                                </Image>
+                                            </StackLayout>
+
+                                            <!-- AddToCartButton in the corner -->
+                                           
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+
+
+
+
+            <!-- Shopping Basket Section -->
+                
+            </StackLayout>
+        <!-- Add this closing tag -->
+
+    </ContentPage.Content>
+</ContentPage>

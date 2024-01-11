@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TpExam.CommandDetailPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Command Details" FontSize="Large" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Margin="10,10,10,0"/>
+
+            <!-- Display details of the selected command -->
+            <Label Text="Command ID: " />
+            <Label Text="{Binding Id}" />
+
+            <Label Text="Customer Name: " />
+            <Label Text="{Binding NomClient}" />
+
+            <Label Text="Command Lines:" FontAttributes="Bold" Margin="0,10,0,0" />
+
+            <!-- Display details of LignesCommande -->
+            <!-- Display details of LignesCommande -->
+            <ListView ItemsSource="{Binding LignesCommande}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                <StackLayout>
+                                <Label Text="{Binding Produit.Nom}" FontAttributes="Bold" />
+                                <Label Text="{Binding Quantite, StringFormat='Quantity: {0}'}" />
+                                
+                                <!-- Add other LigneCommande details as needed -->
+                            </StackLayout>
+                            <Label Text="{Binding Produit.Prix, StringFormat='Price: {0:C}'}" />
+                            <Label Text="{Binding TotalProduit, StringFormat='Total: {0:C}'}" />
+                                                           </StackLayout>
+                            
+                            
+
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
